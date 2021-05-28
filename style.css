@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:900);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap');
+
+body {
+    display: flex;
+    justify-content: space-around;
+    background-color: #252627;
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+.warm1 {
+    background: linear-gradient(180deg, #252627 90%, rgb(255 129 0) 120%);
+}
+.warm2 {
+    background: linear-gradient(180deg, #252627 80%, rgb(255 129 0) 120%);
+}
+.warm3 {
+    background: linear-gradient(180deg, #252627 70%, rgb(255 129 0) 120%);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 4rem;
+}
+
+h2 {
+    display: inline-block;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 250px;
+}
+
+#level {
+    font-size: 300%;
+    text-align: center;
+}
+
+/* Adapted from https://codepen.io/Hornebom/full/obaLYK */
+
+.glowButton {
+    font-weight: 600;
+    border: none;
+    position: relative;
+    margin: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    line-height: 3rem;
+    text-decoration: none;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(160deg, #ff0000, #ec008c);
+    border-radius: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    box-shadow: 0 0 0 0 #ec008c, 0.5rem 0.5rem 30px #13092d;
+    transition: box-shadow 0.6s;
+  }
+  .glowButton:hover {
+    box-shadow: 0 0 60px 2px #ec008c, 0.5rem 0.5rem 30px #13092d;
+  }
+  .glowButton:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 30px;
+    pointer-events: none;
+  }
+
+  .cooler {
+    background-image: linear-gradient(160deg, #0000ff, #005eec);
+    box-shadow: 0 0 0 0 #005eec, 0.5rem 0.5rem 30px #13092d;
+
+  }
+  .cooler:hover {
+    box-shadow: 0 0 60px 2px #005eec, 0.5rem 0.5rem 30px #13092d;
+  }

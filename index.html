@@ -1,0 +1,37 @@
+<html class="warm">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="container">
+            <span><h1>Warm My Lap</h1><h2>top</h2></span>
+            <div id="button-container">
+                <button class="glowButton warmer" onclick="warmer()">Warmer</button>
+                <div id="level">❄️</div>
+                <button class="glowButton cooler" onclick="cooler()">Cooler</button>
+            </div>
+        </div>
+        <script>
+            const workers = [];
+
+            function warmer() {
+                workers.push(new Worker('warm.js'));
+                document.getElementById("level").innerHTML = "🔥".repeat(workers.length);
+                document.body.style.background = `linear-gradient(180deg, #252627 ${100 - workers.length * 10}%, rgb(255 129 0) 120%)`;
+            }
+
+            function cooler() {
+                if (workers) {
+                    workers.pop().terminate();
+                    if (workers.length === 0) {
+                        document.getElementById("level").innerHTML = "❄️";
+                    } else {
+                        document.getElementById("level").innerHTML = "🔥".repeat(workers.length);
+                    }
+                    document.body.style.background = `linear-gradient(180deg, #252627 ${100 - workers.length * 10}%, rgb(255 129 0) 120%)`;
+                }
+            }
+        </script>
+    </body>
+</html>
