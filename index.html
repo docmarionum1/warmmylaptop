@@ -2,6 +2,8 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <title>Warm My Laptop </title>
+        <link rel="icon" id="favicon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
     </head>
     <body>
         <div id="container">
@@ -23,6 +25,7 @@
                 workers.push(new Worker('warm.js'));
                 document.getElementById("level").innerHTML = "🔥".repeat(workers.length);
                 document.body.style.background = `linear-gradient(180deg, #252627 ${100 - workers.length * 10}%, rgb(255 129 0) 120%)`;
+                document.getElementById("favicon").href = "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>";
             }
 
             function cooler() {
@@ -30,6 +33,7 @@
                     workers.pop().terminate();
                     if (workers.length === 0) {
                         document.getElementById("level").innerHTML = "❄️";
+                        document.getElementById("favicon").href = "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>"
                     } else {
                         document.getElementById("level").innerHTML = "🔥".repeat(workers.length);
                     }
